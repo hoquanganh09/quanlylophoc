@@ -14,7 +14,7 @@ public class LopModify {
         try {
             String user = "root";
             String pass = "";
-            String url = "jdbc:mysql://localhost:3340/quanlylophoc";
+            String url = "jdbc:mysql://localhost:3306/quanlylophoc";
             conn = DriverManager.getConnection(url, user, pass);
         } catch (Exception e) {
             e.printStackTrace();

@@ -184,6 +184,8 @@ public class TrangChu extends javax.swing.JFrame {
 
         jMenu7.setText("Liên hệ");
         mnbMenu.add(jMenu7);
+        
+        
 
         setJMenuBar(mnbMenu);
 

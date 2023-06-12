@@ -65,7 +65,7 @@ public class DangKy extends javax.swing.JFrame {
 
         jLabel7.setText("Phân quyền");
 
-        cboPhanQuyen.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Quản trị", "Giảng viên", "Sinh viên" }));
+        cboPhanQuyen.setModel(new javax.swing.DefaultComboBoxModel(new String[] { /*"Quản trị", "Giảng viên",*/ "Sinh viên" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
