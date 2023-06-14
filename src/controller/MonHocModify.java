@@ -161,6 +161,39 @@ public class MonHocModify{
         }
         return list;
     }
+    
+    public String getMaKhoa(String tenkhoa) {
+        String makhoa = "";
+        String get_makhoa = "select * from tblkhoa where TenKhoa = ?";
+        try {
+            PreparedStatement ps = conn.prepareStatement(get_makhoa);
+            ps.setString(1, tenkhoa.trim());
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                makhoa = rs.getString("MaKhoa");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return makhoa;
+    }
+    
+    public int getHocPhi(String s) {
+        int hp = 0;
+        String getHP = "select sum(HocPhi*SoTinChi) TongHP  from tbltinchi where MaSV = ?";
+        try {
+            PreparedStatement ps = conn.prepareStatement(getHP);
+            ps.setString(1, s);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                hp = rs.getInt("TongHP");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return hp;
+    }
 
     public ArrayList<MonHoc> getListTK(String s) {
         ArrayList<MonHoc> list = new ArrayList<>();

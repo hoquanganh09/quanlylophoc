@@ -165,6 +165,7 @@ public class SinhVienModify {
         return tenSV;
     }
 
+    // Tìm kiếm sv = ID
     public String getNameByMaSV(String s) {
         String tenSV = "";
         String get_TenSV = "select * from tblsinhvien where MaSV = ?";

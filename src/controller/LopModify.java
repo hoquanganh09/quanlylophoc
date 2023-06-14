@@ -79,6 +79,41 @@ public class LopModify {
         }
         return false;
     }
+    
+    public String getMaKhoa(String tenkhoa) {
+        String makhoa = "";
+        String get_makhoa = "select * from tblkhoa where TenKhoa = ?";
+        try {
+            PreparedStatement ps = conn.prepareStatement(get_makhoa);
+            ps.setString(1, tenkhoa.trim());
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                makhoa = rs.getString("MaKhoa");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return makhoa;
+    }
+    
+    public String getTenLop(String malop) {
+        String tenlop = "";
+        String get_tenlop = "select * from tbllop where MaLop = ?";
+        try {
+            PreparedStatement ps = conn.prepareStatement(get_tenlop);
+            ps.setString(1, malop);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+            	tenlop = rs.getString("TenLop");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return tenlop;
+    }
+    
     public ArrayList<Lop> getListLop(){
         ArrayList<Lop> list = new ArrayList<>();
         String hienthi = "select * from tbllop";

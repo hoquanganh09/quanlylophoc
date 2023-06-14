@@ -60,7 +60,7 @@ public class KhoaModify {
             return false;
         }
     }
-    // kiem tra trung ma sv
+    // kiem tra trung ma khoa
     public boolean checkMaKhoa(String makhoa){
         String check = "select MaKhoa from tblkhoa where MaKhoa =?";
         try {
